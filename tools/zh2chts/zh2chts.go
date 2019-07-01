@@ -41,7 +41,7 @@ Example:
   zh2chts dir "\.md$" cn2tw
   zh2chts dir "\.md$" tw2cn
 
-Report bugs to <chaishushan{AT}gmail.com>.
+Report bugs to <chainx.zh/gmail.com>.
 
 注意：
 转换后会覆盖原文件，您可能需要先备份。
