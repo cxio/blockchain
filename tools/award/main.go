@@ -15,8 +15,9 @@ const SY6BLOCKS = 87661
 // @base: 初始币量/块
 // @rate: 递减率
 // @ny: 步进年数（固定币量持续）
+// @stop: 块币停止值
 // @return: 总量
-func AwardList(base, rate, ny int) int {
+func AwardList(base, rate, ny, stop int) int {
 	base *= 1
 
 	fmt.Println("年次\t累计\t\t（次计）\t币量/块")
@@ -24,11 +25,8 @@ func AwardList(base, rate, ny int) int {
 
 	sum := 0
 	y := 0
-	for {
-		// 到每块3币时停止。
-		if base < 3 {
-			break
-		}
+	// 到每块3币时停止。
+	for base >= stop {
 		ysum := base * SY6BLOCKS * ny
 		sum += ysum
 		y += ny
@@ -46,7 +44,7 @@ func Award3y() int {
 
 func main() {
 	// 从命令行参数获取基础币量和年利率。
-	// 例如：go run main.go 40 90 1
+	// 例：go run main.go 40 80 2 3? // 末尾的 ? 表示可选
 	if len(os.Args) < 4 {
 		fmt.Println("Usage: go run main.go <base> <rate>")
 		return
@@ -59,9 +57,17 @@ func main() {
 		fmt.Println("Invalid input. Please provide two integers.")
 		return
 	}
-
+	// 默认3币/块后终止
+	stop := 3
+	if len(os.Args) == 5 {
+		stop, err1 = strconv.Atoi(os.Args[4])
+		if err1 != nil {
+			fmt.Println("Invalid input. Please provide two integers.")
+			return
+		}
+	}
 	test3 := Award3y()
-	total := AwardList(base, rate, ny)
+	total := AwardList(base, rate, ny, stop)
 
 	fmt.Println("--------------------------------------------------------")
 	fmt.Println("初期三年：", test3)
