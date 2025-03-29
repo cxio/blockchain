@@ -80,7 +80,7 @@ Bitcoin是区块链世界的开创者，采用工作量证明（PoW）的共识�
 
 #### 附：服务关系图
 
-<img src="images/serv4nets-920x620.png" width="920" alt="服务关系图" />
+<img src="images/serv4nets-920x620.svg" width="920" alt="服务关系图" style="background-color:#333; padding:20px; border-radius: 20px;" />
 
 > **图解：**<br>
 > 实线表示具体的连接，虚线表示抽象的泛连接（任意节点）。<br>

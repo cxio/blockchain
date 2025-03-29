@@ -8,8 +8,12 @@ import (
 	"strconv"
 )
 
-// 恒星年出块数（6分钟）。
-const SY6BLOCKS = 87661
+// 恒星年出块数
+// 6分钟 87661
+// 8分钟 65746
+const YEARBLOCKS = 65746
+
+var yNext int
 
 // AwardList 计算减量发行总量。
 // @base: 初始币量/块
@@ -18,28 +22,35 @@ const SY6BLOCKS = 87661
 // @stop: 块币停止值
 // @return: 总量
 func AwardList(base, rate, ny, stop int) int {
-	base *= 1
-
-	fmt.Println("年次\t累计\t\t（次计）\t币量/块")
-	fmt.Println("--------------------------------------------------------")
-
 	sum := 0
-	y := 0
+	y := yNext
 	// 到每块3币时停止。
 	for base >= stop {
-		ysum := base * SY6BLOCKS * ny
+		ysum := base * YEARBLOCKS * ny
 		sum += ysum
 		y += ny
-		fmt.Printf("%d\t%d \t(%d)\t%d\n", y, sum, ysum, base)
+		fmt.Printf("%d\t%-8d\t[%-7d]\t%d\n", y, sum, ysum, base)
 
 		base = base * rate / 100
 	}
 	return sum
 }
 
-// Award3y 计算初期三年的总量。
-func Award3y() int {
-	return SY6BLOCKS*10 + SY6BLOCKS*20 + SY6BLOCKS*30
+// Award3y 计算初期n年的总量。
+func Award3y(n int) int {
+	sum := 0
+	ysum := 0
+	base := 0
+
+	for y:=1; y<=n; y++ {
+		base = y * 10
+		ysum = YEARBLOCKS * base
+		sum += ysum
+		fmt.Printf("%d\t%-8d\t[%-7d]\t%d\n", y, sum, ysum, base)
+	}
+	yNext = n
+
+	return sum
 }
 
 func main() {
@@ -66,10 +77,16 @@ func main() {
 			return
 		}
 	}
-	test3 := Award3y()
+
+	fmt.Println("年次\t累计\t\t（次计）\t币量/块")
+	fmt.Println("-------------------------------------------------------")
+
+	test3 := Award3y(3)
+	fmt.Println("-------------------------------------------------------")
+
 	total := AwardList(base, rate, ny, stop)
 
-	fmt.Println("--------------------------------------------------------")
+	fmt.Println("-------------------------------------------------------")
 	fmt.Println("初期三年：", test3)
 	fmt.Println("减量发行：", total)
 	fmt.Println("发行总计：", total+test3)
