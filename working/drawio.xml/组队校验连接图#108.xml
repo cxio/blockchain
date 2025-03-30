@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" version="26.0.10">
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.1.1 Chrome/132.0.6834.210 Electron/34.3.3 Safari/537.36" version="26.1.1">
   <diagram id="4Mad9KoFkt2QdkCOqIu4" name="第 1 页">
-    <mxGraphModel dx="2074" dy="1179" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2074" dy="1267" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -17,10 +17,10 @@
           <mxGeometry x="221" y="170" width="440" height="150" as="geometry" />
         </mxCell>
         <mxCell id="z9TssArRS4tETrJ7Rrsh-1" value="广播者" style="rounded=1;whiteSpace=wrap;html=1;fontSize=17;fontStyle=0;fontColor=#CC0000;strokeColor=#CC0000;" parent="1" vertex="1">
-          <mxGeometry x="271" y="236" width="120" height="50" as="geometry" />
+          <mxGeometry x="491" y="236" width="120" height="50" as="geometry" />
         </mxCell>
         <mxCell id="z9TssArRS4tETrJ7Rrsh-2" value="调度者" style="rounded=1;whiteSpace=wrap;html=1;fontSize=17;fontStyle=0;fontColor=#CC0000;strokeColor=#CC0000;" parent="1" vertex="1">
-          <mxGeometry x="491" y="236" width="120" height="50" as="geometry" />
+          <mxGeometry x="271" y="236" width="120" height="50" as="geometry" />
         </mxCell>
         <mxCell id="kLMLri4-kGAl304RDIUM-1" value="管 理 层" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;dashed=1;fontSize=22;fontColor=#FF6666;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="396" y="190" width="89" height="20" as="geometry" />
@@ -210,19 +210,22 @@
           <mxGeometry x="937" y="68" width="110" height="20" as="geometry" />
         </mxCell>
         <mxCell id="kLMLri4-kGAl304RDIUM-61" value="&lt;b style=&quot;font-size: 17px;&quot;&gt;校验员：&lt;/b&gt;&lt;br style=&quot;font-size: 17px;&quot;&gt;✦ 向本组管理层请求验证任务，回馈结果。&lt;br style=&quot;font-size: 17px;&quot;&gt;✦ 向外部组守卫者传送已验证合法的交易。&lt;br style=&quot;font-size: 17px;&quot;&gt;" style="text;html=1;resizable=0;points=[];autosize=1;align=left;verticalAlign=top;spacingTop=-4;fontSize=17;fontColor=#000000;horizontal=1;" parent="1" vertex="1">
-          <mxGeometry x="1201" y="1056" width="320" height="60" as="geometry" />
+          <mxGeometry x="951" y="1073" width="320" height="60" as="geometry" />
         </mxCell>
         <mxCell id="kLMLri4-kGAl304RDIUM-62" value="&lt;b style=&quot;font-size: 17px&quot;&gt;守卫者：&lt;/b&gt;&lt;br style=&quot;font-size: 17px&quot;&gt;✦ 接受外部组校验员或守卫者传送来的交易。&lt;br style=&quot;font-size: 17px&quot;&gt;✦ 初步验证合法后向本组管理层传递。&lt;br&gt;&lt;font color=&quot;#cc0000&quot;&gt;✦&amp;nbsp;与外部组的守卫者连接实现交易的快速广播。&lt;/font&gt;&lt;br&gt;" style="text;html=1;resizable=0;points=[];autosize=1;align=left;verticalAlign=top;spacingTop=-4;fontSize=17;fontColor=#000000;" parent="1" vertex="1">
-          <mxGeometry x="720" y="1036" width="370" height="80" as="geometry" />
+          <mxGeometry x="501" y="1056" width="370" height="80" as="geometry" />
         </mxCell>
         <mxCell id="kLMLri4-kGAl304RDIUM-63" value="&lt;b style=&quot;font-size: 17px;&quot;&gt;管理层：&lt;/b&gt;&lt;br style=&quot;font-size: 17px;&quot;&gt;✦ 与外部组管理层连接，创建或转播区块。&lt;br style=&quot;font-size: 17px;&quot;&gt;✦ 接受本组守卫者传递来的交易并汇总。&lt;br style=&quot;font-size: 17px;&quot;&gt;✦ 接受本组校验员的请求派发完整校验任务。&lt;br style=&quot;font-size: 17px;&quot;&gt;" style="text;html=1;resizable=0;points=[];autosize=1;align=left;verticalAlign=top;spacingTop=-4;fontSize=17;fontColor=#000000;" parent="1" vertex="1">
-          <mxGeometry x="201" y="1036" width="340" height="80" as="geometry" />
+          <mxGeometry x="80" y="1055" width="340" height="80" as="geometry" />
         </mxCell>
         <mxCell id="kLMLri4-kGAl304RDIUM-64" value="UTXO&lt;br style=&quot;font-size: 17px;&quot;&gt;缓存器&lt;br style=&quot;font-size: 17px;&quot;&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;rounded=1;shadow=0;glass=0;comic=0;labelBackgroundColor=none;strokeColor=#009900;strokeWidth=1;fillColor=none;fontSize=17;fontColor=#009900;fontStyle=0;fontFamily=Times New Roman;" parent="1" vertex="1">
           <mxGeometry x="581" y="860" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="kLMLri4-kGAl304RDIUM-65" value="UTXO&lt;br style=&quot;font-size: 17px;&quot;&gt;缓存器&lt;br style=&quot;font-size: 17px;&quot;&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;rounded=1;shadow=0;glass=0;comic=0;labelBackgroundColor=none;strokeColor=#009900;strokeWidth=1;fillColor=none;fontSize=17;fontColor=#009900;fontStyle=0;fontFamily=Times New Roman;" parent="1" vertex="1">
           <mxGeometry x="1421" y="860" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="6tHCyhZfaOgKQEK1TZPk-1" value="&lt;b&gt;&lt;font style=&quot;font-size: 17px; color: rgb(0, 0, 255);&quot;&gt;广播者&lt;/font&gt;&lt;/b&gt;：&lt;i&gt;3F, 3D, 8广播者&lt;/i&gt;&lt;div&gt;&lt;b&gt;&lt;font style=&quot;color: rgb(0, 0, 255); font-size: 17px;&quot;&gt;校验员&lt;/font&gt;&lt;/b&gt;：&lt;i&gt;3F, 3D, 8守卫者&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font style=&quot;color: rgb(0, 0, 255); font-size: 17px;&quot;&gt;守卫者&lt;/font&gt;&lt;/b&gt;：&lt;i&gt;3F, 3D, 8守卫者, 8校验员&lt;/i&gt;&lt;/div&gt;" style="text;html=1;resizable=0;points=[];autosize=1;align=left;verticalAlign=top;spacingTop=-4;fontSize=16;fontColor=#000000;horizontal=1;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="1361" y="1020" width="270" height="70" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
