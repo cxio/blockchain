@@ -1,0 +1,106 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" version="27.1.5">
+  <diagram name="Page-1" id="page1">
+    <mxGraphModel dx="1112" dy="2295" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="创链" style="ellipse;whiteSpace=wrap;strokeColor=#AAAAAA;fillColor=#EEEEEE;fontSize=18;fontStyle=0;fontFamily=Helvetica;labelBackgroundColor=none;labelBorderColor=none;textShadow=0;html=1;fontColor=#666666;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="357" y="-47" width="86" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="领票" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=20;fontWeight=bold;fontStyle=1;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="330" y="79" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="投票" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=20;fontWeight=bold;shadow=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="331" y="640" width="140" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="6soxoB9vpEYsCNM1lpvy-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;elbow=vertical;curved=1;strokeColor=#E68A2E;strokeWidth=3;shadow=1;" parent="1" source="5" target="6soxoB9vpEYsCNM1lpvy-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="开票" style="rhombus;whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=#2D7600;fontSize=20;fontWeight=bold;fontColor=#ffffff;shadow=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="330" y="901" width="140" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="&lt;div style=&quot;line-height: 160%;&quot;&gt;&lt;div&gt;0. 核验身份&lt;br&gt;1. 领取 &lt;b&gt;登记号&lt;/b&gt;&lt;br&gt;2. 领取 &lt;b&gt;选票密码&lt;/b&gt;&lt;br&gt;3.&amp;nbsp;&lt;font style=&quot;background-color: transparent; color: light-dark(rgb(128, 128, 128), rgb(127, 127, 127));&quot;&gt;&lt;b&gt;Hash&lt;/b&gt;(&lt;/font&gt;&lt;font style=&quot;background-color: transparent; color: light-dark(rgb(128, 128, 128), rgb(127, 127, 127)); font-style: italic;&quot;&gt; &lt;font style=&quot;font-size: 17px; line-height: 160%;&quot;&gt;Hash(登记号) + Hash(口令)&lt;/font&gt; &lt;/font&gt;&lt;font style=&quot;background-color: transparent; color: light-dark(rgb(128, 128, 128), rgb(127, 127, 127));&quot;&gt;)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;4. 提供 公钥地址&lt;br&gt;5. &lt;i&gt;发送&lt;/i&gt;&amp;nbsp;&lt;b&gt;票权&lt;/b&gt;（内容票 凭证）&lt;br&gt;6. &lt;i&gt;发送&lt;/i&gt;&amp;nbsp;&lt;b&gt;确权&lt;/b&gt;（确认票 凭证）&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#999999;strokeStyle=dashed;fillColor=none;align=left;verticalAlign=top;fontSize=18;spacingLeft=14;spacingTop=10;fontColor=#808080;shadow=0;spacing=4;fontFamily=Verdana;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="619" y="120" width="360" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="&lt;div style=&quot;line-height: 140%;&quot;&gt;&lt;i&gt;内容票：&lt;/i&gt;&lt;br&gt;&amp;nbsp; &amp;nbsp; 1. 填写选票&lt;br&gt;&amp;nbsp; &amp;nbsp; 2. 内容&lt;b&gt;加密&lt;/b&gt;&lt;br&gt;&amp;nbsp; &amp;nbsp; 3. 花费&lt;b&gt;票权&lt;/b&gt; &lt;i&gt;发送&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;i&gt;确认票：&lt;/i&gt;&lt;br&gt;&amp;nbsp; &amp;nbsp; 1. 提供口令和登记号的哈希&lt;br&gt;&amp;nbsp; &amp;nbsp; 2. 引用&lt;b&gt;内容票&lt;/b&gt;&lt;br&gt;&amp;nbsp; &amp;nbsp; 3. 花费&lt;b&gt;确权&lt;/b&gt; &lt;i&gt;发送&lt;/i&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#999999;strokeStyle=dashed;fillColor=none;align=left;verticalAlign=top;fontSize=18;spacingLeft=12;spacingTop=0;fontColor=#808080;shadow=0;spacing=6;fontFamily=Verdana;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="619" y="640" width="360" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="&lt;b&gt;机构&lt;/b&gt;：公布基码，开放监督" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#d6b656;fillColor=#fff2cc;fontSize=20;strokeWidth=2;shadow=0;glass=0;align=left;spacingLeft=30;dashed=1;dashPattern=1 2;fontColor=#808080;" parent="1" vertex="1">
+          <mxGeometry x="329" y="1171" width="340" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="" style="endArrow=block;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#6c8ebf;strokeWidth=1;shape=arrow;fillColor=#dae8fc;" parent="1" source="3" target="4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="400" as="sourcePoint" />
+            <mxPoint x="440" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="14" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#b85450;shape=arrow;fillColor=#f8cecc;" parent="1" source="4" target="5" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="255" as="sourcePoint" />
+            <mxPoint x="410" y="625" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6soxoB9vpEYsCNM1lpvy-15" value="&lt;span style=&quot;text-align: left;&quot;&gt;• 导入基码&lt;/span&gt;&lt;br style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;text-align: left;&quot;&gt;• 解密计票&lt;/span&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fontSize=18;fontFamily=Verdana;fontColor=#CC6600;strokeColor=#999999;shadow=1;fillColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="619" y="952.6" width="260" height="175.4" as="geometry" />
+        </mxCell>
+        <mxCell id="6soxoB9vpEYsCNM1lpvy-19" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#999999;shadow=1;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="569" y="120" as="sourcePoint" />
+            <mxPoint x="619" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6soxoB9vpEYsCNM1lpvy-20" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#999999;shadow=1;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="569" y="640" as="sourcePoint" />
+            <mxPoint x="619" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6soxoB9vpEYsCNM1lpvy-21" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#999999;shadow=1;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="569" y="900" as="sourcePoint" />
+            <mxPoint x="619" y="900" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6soxoB9vpEYsCNM1lpvy-22" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#999999;shadow=1;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="569" y="613" as="sourcePoint" />
+            <mxPoint x="619" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6soxoB9vpEYsCNM1lpvy-23" value="" style="endArrow=none;html=1;rounded=0;shadow=1;strokeColor=#808080;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="120" as="sourcePoint" />
+            <mxPoint x="180" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6soxoB9vpEYsCNM1lpvy-24" value="" style="endArrow=none;html=1;rounded=0;shadow=1;strokeColor=#808080;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="640" as="sourcePoint" />
+            <mxPoint x="180" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6soxoB9vpEYsCNM1lpvy-25" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;shadow=1;strokeColor=#808080;" parent="1" vertex="1">
+          <mxGeometry x="144" y="640" width="35" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="6soxoB9vpEYsCNM1lpvy-26" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;shadow=1;strokeColor=#808080;" parent="1" vertex="1">
+          <mxGeometry x="123" y="900" width="25" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="6soxoB9vpEYsCNM1lpvy-27" value="" style="endArrow=none;html=1;rounded=0;shadow=1;strokeColor=#808080;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="137" y="640" as="sourcePoint" />
+            <mxPoint x="139" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6soxoB9vpEYsCNM1lpvy-29" value="1 ~ 3 个月" style="text;strokeColor=none;fillColor=none;html=1;fontSize=20;fontStyle=0;verticalAlign=middle;align=center;fontFamily=Times New Roman;rotation=-89;fontColor=#808080;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="57" y="350" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="6soxoB9vpEYsCNM1lpvy-30" value="1 ~ 3 天" style="text;strokeColor=none;fillColor=none;html=1;fontSize=20;fontStyle=0;verticalAlign=middle;align=center;fontFamily=Times New Roman;rotation=-89;fontColor=#808080;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="68.869574224992" y="749.3414328865653" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="6soxoB9vpEYsCNM1lpvy-31" value="半 天" style="text;strokeColor=none;fillColor=none;html=1;fontSize=20;fontStyle=0;verticalAlign=middle;align=center;fontFamily=Times New Roman;rotation=-89;fontColor=#808080;shadow=1;rounded=0;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="46.86957422499199" y="940.3414328865653" width="100" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
