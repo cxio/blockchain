@@ -11,7 +11,7 @@ import (
 // 恒星年出块数
 // 6分钟 87661
 // 8分钟 65746
-const YEARBLOCKS = 65746
+const YEARBLOCKS = 87661
 
 var yNext int
 
@@ -42,7 +42,7 @@ func Award3y(n int) int {
 	ysum := 0
 	base := 0
 
-	for y:=1; y<=n; y++ {
+	for y := 1; y <= n; y++ {
 		base = y * 10
 		ysum = YEARBLOCKS * base
 		sum += ysum
@@ -57,13 +57,15 @@ func main() {
 	// 从命令行参数获取基础币量和年利率。
 	// 例：go run main.go 40 80 2 3? // 末尾的 ? 表示可选
 	if len(os.Args) < 4 {
-		fmt.Println("Usage: go run main.go <base> <rate>")
+		fmt.Println("Usage: go run main.go <base> <rate> <ny> [stop]")
+		fmt.Println("Example: go run main.go 40 80 2 3")
 		return
 	}
 
 	base, err1 := strconv.Atoi(os.Args[1])
 	rate, err2 := strconv.Atoi(os.Args[2])
 	ny, err3 := strconv.Atoi(os.Args[3])
+
 	if err1 != nil || err2 != nil || err3 != nil {
 		fmt.Println("Invalid input. Please provide two integers.")
 		return
