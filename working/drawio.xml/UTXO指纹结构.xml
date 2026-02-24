@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36" version="29.5.0">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36" version="29.5.0">
   <diagram id="25231785-1ba9-9f49-2060-b6ecef9f5f02" name="第 1 页">
     <mxGraphModel dx="2066" dy="1150" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" background="#ffffff" math="0" shadow="0">
       <root>
@@ -54,20 +54,20 @@
         <mxCell id="272" parent="1" style="text;html=1;resizable=0;points=[];autosize=1;align=center;verticalAlign=top;spacingTop=-4;fontSize=16;fontFamily=Verdana;fontColor=#808080;fontStyle=1;" value="TxID [8&lt;span style=&quot;background-color: initial;&quot;&gt;]:&lt;/span&gt;" vertex="1">
           <mxGeometry height="30" width="100" x="54" y="324" as="geometry" />
         </mxCell>
-        <mxCell id="273" parent="1" style="text;html=1;resizable=0;points=[];autosize=1;align=center;verticalAlign=top;spacingTop=-4;fontSize=16;fontFamily=Verdana;fontColor=#808080;fontStyle=1;" value="TxID [16]:" vertex="1">
+        <mxCell id="273" parent="1" style="text;html=1;resizable=0;points=[];autosize=1;align=center;verticalAlign=top;spacingTop=-4;fontSize=16;fontFamily=Verdana;fontColor=#808080;fontStyle=1;" value="TxID [13]:" vertex="1">
           <mxGeometry height="30" width="110" x="44" y="475" as="geometry" />
         </mxCell>
         <mxCell id="274" parent="1" style="text;resizable=0;points=[];autosize=1;align=left;verticalAlign=middle;spacingTop=0;fontSize=18;fontFamily=Verdana;fontColor=#007FFF;fontStyle=2;html=1;" value="&lt;b&gt;目录/长度：&lt;/b&gt;256" vertex="1">
           <mxGeometry height="30" width="160" x="900" y="471" as="geometry" />
         </mxCell>
-        <mxCell id="278" parent="1" style="text;html=1;resizable=0;points=[];autosize=1;align=center;verticalAlign=top;spacingTop=-4;fontSize=16;fontFamily=Verdana;fontColor=#808080;fontStyle=1;" value="TxID [32]:" vertex="1">
+        <mxCell id="278" parent="1" style="text;html=1;resizable=0;points=[];autosize=1;align=center;verticalAlign=top;spacingTop=-4;fontSize=16;fontFamily=Verdana;fontColor=#808080;fontStyle=1;" value="TxID [18]:" vertex="1">
           <mxGeometry height="30" width="110" x="44" y="620" as="geometry" />
         </mxCell>
         <mxCell id="286" parent="1" style="text;resizable=0;points=[];autosize=1;align=left;verticalAlign=middle;spacingTop=0;fontSize=18;fontFamily=Verdana;fontColor=#007FFF;fontStyle=2;html=1;" value="&lt;b&gt;目录/长度：&lt;/b&gt;256" vertex="1">
           <mxGeometry height="30" width="160" x="900" y="617" as="geometry" />
         </mxCell>
-        <mxCell id="289" parent="1" style="text;html=1;resizable=0;points=[];autosize=1;align=left;verticalAlign=top;spacingTop=0;fontSize=18;fontFamily=Verdana;fontColor=#333333;fontStyle=0;labelBorderColor=none;spacing=0;" value="&lt;span style=&quot;line-height: 160%&quot;&gt;&lt;b&gt;父节点哈希：&lt;/b&gt;子成员哈希合并汇总摘要&lt;br&gt;&lt;/span&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;line-height: 160%&quot;&gt;&lt;b&gt;三级分层：&lt;/b&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(51, 51, 51), rgb(193, 193, 193));&quot;&gt;除年度外，&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(51, 51, 51), rgb(193, 193, 193));&quot;&gt;采用交易ID中段位置的字节值分组&lt;/span&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="70" width="470" x="863" y="26" as="geometry" />
+        <mxCell id="289" parent="1" style="text;html=1;resizable=0;points=[];autosize=1;align=left;verticalAlign=top;spacingTop=0;fontSize=18;fontFamily=Verdana;fontColor=#333333;fontStyle=0;labelBorderColor=none;spacing=0;" value="&lt;span style=&quot;line-height: 160%&quot;&gt;&lt;b&gt;父节点哈希：&lt;/b&gt;子成员哈希合并汇总摘要&lt;br&gt;&lt;/span&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;line-height: 160%&quot;&gt;&lt;b&gt;三级分层：&lt;/b&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(51, 51, 51), rgb(193, 193, 193));&quot;&gt;除年度外，&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(51, 51, 51), rgb(193, 193, 193));&quot;&gt;采用交易ID中段位置（&amp;lt;20）的字节值分组&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="550" x="831" y="26" as="geometry" />
         </mxCell>
         <mxCell id="314" edge="1" parent="1" source="299" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;endArrow=block;endFill=1;jettySize=auto;orthogonalLoop=1;strokeColor=#000000;fontFamily=Verdana;fontSize=16;fontColor=#333333;" target="307">
           <mxGeometry relative="1" as="geometry" />
