@@ -171,14 +171,14 @@ DATA{<hashSource>}                  // 哈希源，由甲方创建并保留
 
 // 锁定脚本
 SYS_CHKPASS                         // 系统内置验证（从环境取实参）
-SYS_TIME{Stamp} {<expireTime>}      // 提取当前时间戳、预置过期时间戳
+ENV{Height} {<expireHeight>}        // 提取当前高度（时间）、预置过期高度
 GT                                  // 栈顶2项大于对比，返回Bool
 IF{                                 // 真：
-    MULSIG[0]                       // 是否由甲签名，返回Bool
+    SIGNED[0]                       // 是否由甲签名，返回Bool
     PASS                            // 栈顶为真时通过（甲赎回）
     EXIT                            // 结束脚本
 }                                   // 假：
-MULSIG[1] PASS                      // 是否由乙签名，真时通过
+SIGNED[1] PASS                      // 是否由乙签名，真时通过
 FN_HASH256                          // 栈顶剩余项为<hashSource>，计算其哈希
 DATA{<hashResult>}                  // 预置源哈希结果
 EQUAL PASS                          // 栈顶两个序列相等比较，真时通过（乙转移）
