@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36" version="29.5.0">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" version="29.5.2">
   <diagram id="25231785-1ba9-9f49-2060-b6ecef9f5f02" name="第 1 页">
-    <mxGraphModel dx="2066" dy="1150" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+    <mxGraphModel dx="2175" dy="1211" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" background="#ffffff" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -146,14 +146,14 @@
         <mxCell id="333" parent="1" style="text;resizable=0;points=[];autosize=1;align=left;verticalAlign=middle;spacingTop=0;fontSize=18;fontFamily=Verdana;fontColor=#007FFF;fontStyle=2;html=1;" value="&lt;b&gt;目录/长度：&lt;/b&gt;256" vertex="1">
           <mxGeometry height="30" width="160" x="900" y="321" as="geometry" />
         </mxCell>
-        <mxCell id="m4rSZJrHZHSQDn_3ueff-342" parent="1" style="text;html=1;resizable=0;points=[];autosize=1;align=left;verticalAlign=top;spacingTop=-4;fontSize=18;fontFamily=Verdana;" value="&lt;font color=&quot;#4d4d4d&quot; style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;info: &lt;/b&gt;TxID + &lt;i style=&quot;&quot;&gt;输出指引&lt;/i&gt;&lt;br style=&quot;font-size: 18px&quot;&gt;&lt;b&gt;输出指引：&lt;/b&gt;交易输出项按顺序排列的未用状态标志位序列&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(204, 0, 0)); font-size: 17px;&quot;&gt;&lt;i style=&quot;&quot;&gt;- 已用：0&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font&gt;&lt;i style=&quot;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 153, 77)); font-size: 17px;&quot;&gt;- 未用：1&lt;/font&gt;&lt;/i&gt;&lt;br&gt;&lt;/font&gt;&lt;div&gt;&lt;div&gt;&lt;font color=&quot;#4d4d4d&quot; style=&quot;font-size: 18px;&quot;&gt;UTXO：&lt;i&gt;凭信未用标记位置零（默认）&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#4d4d4d&quot; style=&quot;font-size: 18px;&quot;&gt;UTCO：&lt;i&gt;币金未用标记位置零（默认）&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="140" width="470" x="801" y="721" as="geometry" />
+        <mxCell id="m4rSZJrHZHSQDn_3ueff-342" parent="1" style="text;html=1;resizable=0;points=[];autosize=1;align=left;verticalAlign=top;spacingTop=-4;fontSize=18;fontFamily=Verdana;" value="&lt;font color=&quot;#4d4d4d&quot; style=&quot;font-size: 18px;&quot;&gt;DataID: 输出集未花费项数据（紧凑结构）摘要&lt;br style=&quot;font-size: 18px&quot;&gt;Out-Item-Flag&lt;b&gt;：&lt;/b&gt;输出项按顺序排列的未用标志位序列&lt;/font&gt;&lt;div&gt;&lt;i style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 153, 77)); font-size: 17px;&quot;&gt;- 未用：1&lt;/font&gt;&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(204, 0, 0)); font-size: 17px;&quot;&gt;&lt;i&gt;- 已用或无效：0&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="460" x="826" y="745" as="geometry" />
         </mxCell>
         <mxCell id="m4rSZJrHZHSQDn_3ueff-344" parent="1" style="whiteSpace=wrap;html=1;fontFamily=Verdana;fontSize=16;fontStyle=0;strokeColor=#009900;" value="&lt;span style=&quot;font-size: 16px;&quot;&gt;infoHash&lt;/span&gt;" vertex="1">
           <mxGeometry height="50" width="120" x="161" y="734" as="geometry" />
         </mxCell>
-        <mxCell id="m4rSZJrHZHSQDn_3ueff-345" parent="1" style="whiteSpace=wrap;html=1;fontFamily=Verdana;fontSize=16;fontStyle=0;strokeColor=#009900;fontColor=#006600;" value="&lt;span style=&quot;font-size: 16px&quot;&gt;info: [TxID][Out-Item-Flag]&lt;/span&gt;" vertex="1">
-          <mxGeometry height="50" width="259" x="161" y="784" as="geometry" />
+        <mxCell id="m4rSZJrHZHSQDn_3ueff-345" parent="1" style="whiteSpace=wrap;html=1;fontFamily=Verdana;fontSize=16;fontStyle=0;strokeColor=#009900;fontColor=#006600;" value="&lt;span style=&quot;font-size: 16px&quot;&gt;info: TxID || DataID || Out-Item-Flag&lt;/span&gt;" vertex="1">
+          <mxGeometry height="50" width="349" x="161" y="784" as="geometry" />
         </mxCell>
         <mxCell id="cnGS5UlNjm3nL6KuZeAA-337" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;endFill=1;jettySize=auto;orthogonalLoop=1;strokeColor=#000000;fontFamily=Verdana;fontSize=16;fontColor=#0066CC;curved=1;dashed=1;strokeWidth=1;dashPattern=1 1;">
           <mxGeometry relative="1" as="geometry">
