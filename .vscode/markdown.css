@@ -1,0 +1,10 @@
+/* VSCode: 针对 Markdown 代码块字符图预览对齐。
+ * 用法：
+ * ```graph
+ * 这里放字符图表。
+ * 在预览模式中等宽显示，兼容中文。可用于核实字符线条是否对齐。
+ */
+pre>code.language-graph {
+    font-family: "Sarasa Mono SC", monospace !important;
+    line-height: 110% !important;
+}
