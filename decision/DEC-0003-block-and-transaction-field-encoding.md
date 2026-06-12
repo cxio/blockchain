@@ -43,6 +43,7 @@ Conception 已给出 `BlockHeader` 与 `TxHeader` 的伪结构，但字段存在
 6. `Minter MintProof`（创世 Coinbase 省略，省略规则见下）
 7. `FreeData bytes<256>`（`varint(length) || bytes`，length ≤ 255）
 8. `BurnCoin int64`（交易费销毁量，单位 chx；语义见 conception `附.交易.md#收益分成`）
+9. `AwardSlots [18]byte`（公共服务兑奖槽；编码与确认语义见 DEC-0401）
 
 Coinbase 不含 `HashInputs` 字段（无输入项）。`Minter` 的省略规则：当且仅当 `BlockHeight == 0`（创世）时省略，否则必须存在。无需额外 presence 标识。
 

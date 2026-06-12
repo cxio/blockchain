@@ -37,7 +37,7 @@ Conception 允许新区块先广播最小证明，再同步区块概要和交易
 - 计算 `CoinbaseTxID`。
 - 用 `CoinbaseTxID`、`CoinbaseTxIndex` 和 `CoinbaseMerklePath` 重算交易树根，并对比 `TreeRoot`。
 - 用 `TreeRoot || UTXORoot || UTCORoot` 重算 `CheckRoot`，并对比 `BlockHeader.CheckRoot`。
-- 验证 `CoinbaseTx.Minter.MintHash` 与签名（此步应当在择优池成员进入时已验证，可略过）。
+- 验证 `CoinbaseTx.Minter` 的铸凭证明：`Nonce >= BlockHeader.Height`、`Solution` 可解析且索引升序并无重复、Equi-X 校验通过，并且重算 `MintHash` 与签名匹配（此步应当在择优池成员进入时已验证，可略过重验）。
 - 用 `CoinbaseTx.Minter.MintPubKey` 验证 `MinterCheckRootSignature`。
 
 ## Rationale（理由）
@@ -52,7 +52,7 @@ Conception 允许新区块先广播最小证明，再同步区块概要和交易
 - 证明包不证明 UTXO/UTCO 状态本身，只要求与本地当前状态一致。
 - 初始同步至少需要最近 31 块证明包以覆盖分叉安全窗口。
 - 若节点缺少本地 UTXO/UTCO 指纹或需要验证状态真实性，应通过完整区块、Blockqs 或校验组获取额外状态数据；这不属于本证明包。
-- 测试需要覆盖择优池成员检查、前一区块衔接、UTXO/UTCO 本地不一致、Coinbase 非 0 序位、TreeRoot 不匹配、MintProof 签名错误和 CheckRoot 签名错误。
+- 测试需要覆盖择优池成员检查、前一区块衔接、UTXO/UTCO 本地不一致、Coinbase 非 0 序位、TreeRoot 不匹配、MintProof `Nonce` 非法、`Solution` 非升序或有重复、MintProof 签名错误和 CheckRoot 签名错误。
 
 ## Conception References（构想层依据）
 

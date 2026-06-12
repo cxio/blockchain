@@ -4,14 +4,22 @@ Status: Accepted
 
 ## Context（背景）
 
-Conception 已明确铸凭交易区间、评参区块、`Stakes` 来源、择优池大小和铸凭哈希因子。本决策冻结铸凭哈希前像字段编码、`X` 的数值规则、MintProof 字段顺序和初段 Coinbase 参与资格。
+Conception 已明确铸凭交易区间、评参区块、`Stakes` 来源、择优池大小和铸凭哈希因子。本决策冻结 challenge seed 组成、Equi-X 解答约束、最终 `MintHash` 计算、MintProof 字段顺序和初段 Coinbase 参与资格。
 
 ## Decision（决策）
 
-铸凭哈希前像为：
+铸凭哈希采用两段式计算：先生成 challenge seed，再通过 Equi-X 生成 `hashList`，最后计算 `MintHash`。
+
+固定参数：
+
+- `Mix = 0x517cc1b727220a95`
+- `BlockHeight` 为当前待铸区块高度。
+- `X = BE(minimal_unsigned(BlockHeight * Mix))`。
+
+challenge seed 为：
 
 ```text
-DomainTag("mint.hash") || MintPubKey || MintTxID || Stakes || RefMintHash || X
+ChallengeSeed = BLAKE3-256(MintPubKey || MintTxID || Stakes || RefMintHash || X)
 ```
 
 其中：
@@ -20,22 +28,37 @@ DomainTag("mint.hash") || MintPubKey || MintTxID || Stakes || RefMintHash || X
 - `MintTxID` 为铸凭交易完整 48 字节 TxID。
 - `Stakes` 为链末端 `-32` 区块头中的币权销毁值，uint64 按大端序编码。
 - `RefMintHash` 为评参区块 Coinbase 中记录的铸凭哈希；创世块或初段无 `Minter` 时取全零 32 字节。
-- `X = BE(minimal_unsigned(BlockHeight * Mix))`。
-- `BlockHeight` 为当前待铸区块高度。
-- `Mix = 0x517cc1b727220a95`。
+
+Equi-X 规则：
+
+- 求解输入固定为 `ChallengeSeed`。
+- `Nonce` 必须满足 `Nonce >= BlockHeight`。
+- `Solution` 在解析为索引序列后必须严格升序且无重复。
+- 验证端必须对 `ChallengeSeed`、`Nonce`、`Solution` 运行 Equi-X 验证，且仅在验证通过时接受返回的 `HashList`。
+
+最终铸凭哈希为：
+
+```text
+MintHash = BLAKE3-256(DomainTag("mint.hash") || HashList[0] || ... || HashList[n-1])
+```
+
+`HashList` 的拼接顺序必须与 `Solution` 索引顺序一致，不允许重排。
 
 `MintProof` 字段顺序为：
 
 1. `TxHeight uint32`
 2. `TxID [48]byte`
-3. `MintPubKey bytes`
-4. `MintHash [32]byte`
-5. `Signature bytes`
+3. `Nonce uint64`
+4. `Solution bytes`（Equi-X 解答的 canonical bytes）
+5. `MintPubKey bytes`
+6. `MintHash [32]byte`
+7. `Signature bytes`
 
 排序规则：
 
-- 铸凭哈希按 32 字节字典序升序，值小者优。
-- 哈希相同则按完整 TxID 升序，再按公钥字节升序。
+- 先按 `Nonce` 升序，值小者优。
+- 在 `Nonce` 相同条件下按 `MintHash` 的 32 字节字典序升序，值小者优。
+- 若 `Nonce` 与 `MintHash` 仍相同，则按完整 `TxID` 升序，再按公钥字节升序。
 
 铸造者身份规则：
 
@@ -45,12 +68,12 @@ DomainTag("mint.hash") || MintPubKey || MintTxID || Stakes || RefMintHash || X
 
 ## Rationale（理由）
 
-前像字段均为公开且可验证数据。`X` 使用无损大整数编码，可避免固定宽度溢出。`MintProof` 把 `MintHash` 放在签名前，可便于检索和预筛选，但签名验证仍以重新计算值为准。
+两段式设计把身份和历史因子先压缩为 `ChallengeSeed`，再引入 Equi-X 工作量以抑制实时发掘与算力偏置；最终 `MintHash` 只对有效 `HashList` 聚合并加域标签，保证用途隔离。`X` 使用无损大整数编码，可避免固定宽度溢出。排序先比较 `Nonce` 可抑制“反复试 nonce”带来的竞争偏移。
 
 ## Consequences（影响）
 
 - `MintPubKey` 必须能证明其哈希等于 `MintPKHash`，或在无 `MintPKHash` 时作为 `LeadPKHash` 参与输入根验证。
-- 若 `Stakes=0`，`X` 编码为单字节 `0x00`。
+- `MintProof` 验证包含 `Nonce >= BlockHeight`、`Solution` 升序且无重复和 Equi-X 有效性检查。
 - 初段 Coinbase 作为铸凭交易时必须设置 `MintPKHash`，并且必须已经确认。
 
 ## Conception References（构想层依据）

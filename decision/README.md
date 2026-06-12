@@ -90,4 +90,3 @@
 - 若 conception 已明确，只在 README 的吸收清单中记录，不新增 DEC。
 - 若无法从 conception 直接裁定，状态必须为 `Proposed`，并列出待裁决参数。
 - 若后续 conception 吸收某 DEC，应删除该 DEC，或迁移为 README 中的吸收记录。
-- 若发现 conception 自身冲突，记录到 [CONCEPTION-CONFLICTS.md](CONCEPTION-CONFLICTS.md)，不要在 Decision 中伪造最终规则。

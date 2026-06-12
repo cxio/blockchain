@@ -47,7 +47,7 @@ RewardBase = issuance + unburned_tx_fee + reclaimed_award
 
 - Blockqs、Depots、STUN 各自 6 字节，共 18 字节。
 - 每个服务槽覆盖前 48 个区块，每块 1 bit。
-- Coinbase 头部携带 `AwardSlots [18]byte`，不作为输出项。
+- 所有 Coinbase 头部均携带 `AwardSlots [18]byte`，不作为输出项；该字段始终存在（含创世交易）。创世交易与百日前 Coinbase 因无公共服务激励，其值恒为全零。
 - 槽位顺序为 Blockqs 6 字节、Depots 6 字节、STUN 6 字节。
 - bit0 对应 `H-1`，bit47 对应 `H-48`。
 - 某区块 `K` 的公共服务奖励，在 `K+1..K+48` 被后续 Coinbase 的对应服务槽确认。
@@ -70,7 +70,7 @@ Coinbase 输出顺序会直接影响 TxID，因此固定为配置值升序，与
 
 ## Consequences（影响）
 
-- Coinbase 序列化必须包含 `AwardSlots [18]byte` 字段；百日前该字段应为全零或按编码规则表达为空槽。
+- 所有 Coinbase 序列化均必须包含 `AwardSlots [18]byte` 头字段（含创世交易）；创世交易与百日前 Coinbase 因无公共服务激励，该字段值恒为全零，但字段本身始终存在、不省略。
 - `SYS_AWARD` 只适用于公共服务奖励输出；百日前 Coinbase 不包含此类输出。
 - 第 49 块回收额不直接编码，但会影响 Coinbase 输出金额和 TxID。
 - 测试需要覆盖高度 0、24000、24001，奇数交易费，输出余数归属，兑奖 0/50/100%，以及第 49 块回收。
